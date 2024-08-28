@@ -6171,7 +6171,7 @@ button.bg-dark:focus {
 
 .mb-4,
 .my-4 {
-  margin-bottom: 1.5rem !important; }
+  margin-bottom: .5rem !important; }
 
 .ml-4,
 .mx-4 {
@@ -6285,7 +6285,7 @@ button.bg-dark:focus {
 
 .pb-4,
 .py-4 {
-  padding-bottom: 1.5rem !important; }
+  padding-bottom: .5rem !important; }
 
 .pl-4,
 .px-4 {
@@ -7669,7 +7669,7 @@ h1, h2, h3, h4, h5,
       color: #fff; }
     .btn.btn-white.btn-outline-white {
       border-color: rgba(255, 255, 255, 0.8);
-      background: none;
+      background: black;
       -webkit-border-radius: 0;
       -moz-border-radius: 0;
       -ms-border-radius: 0;
@@ -7891,7 +7891,7 @@ h1, h2, h3, h4, h5,
         color: #000; }
     .staff .info span.position {
       display: block;
-      margin-bottom: 15px;
+      margin-bottom: 5px;
       font-size: 14px; }
   .staff .img {
     width: 110px;
@@ -8267,7 +8267,7 @@ textarea.form-control {
   font-size: 24px; }
 
 .ftco-section {
-  padding: 7em 0;
+  padding: 1em 0;
   position: relative; }
   @media (max-width: 767.98px) {
     .ftco-section {
@@ -8544,7 +8544,7 @@ textarea.form-control {
           color: #28666e; }
   .blog-entry .meta > div {
     display: inline-block;
-    margin-right: 5px;
+    margin-right: 15px;
     margin-bottom: 5px;
     font-size: 15px; }
     .blog-entry .meta > div a {
@@ -8571,7 +8571,7 @@ textarea.form-control {
     color: white; }
 
 .block-6 {
-  margin-bottom: 40px; }
+  margin-bottom: 0px; }
   .block-6 .media-body p {
     font-size: 16px; }
 

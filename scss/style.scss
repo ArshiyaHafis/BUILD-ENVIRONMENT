@@ -518,7 +518,7 @@ h1, h2, h3, h4, h5,
 		}
 	}
 	&.btn-white {
-		background: $white !important;
+		background: $black !important;
 		border: 1px solid $white;
 		color: $black;
 		@include border-radius(0);
@@ -529,7 +529,7 @@ h1, h2, h3, h4, h5,
 			color :$white;
 		}
 		&.btn-outline-white {
-			background: $white; 
+			background: $black; 
 			border-color: $white;
 			@include border-radius(0);
 			border-width: 1px;
