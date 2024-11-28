@@ -7342,7 +7342,7 @@ h1, h2, h3, h4, h5,
     padding-bottom: .9rem;
     padding-left: 20px;
     padding-right: 20px;
-    color: rgba(255, 255, 255, 0.8);
+    color: black;
     font-weight: 400;
     opacity: 1 !important; }
     .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
@@ -7517,7 +7517,7 @@ h1, h2, h3, h4, h5,
   height: 700px; }
   .slider-text h1 {
     font-size: 60px;
-    color: #fff;
+    color: black;
     line-height: 1.2;
     font-weight: 400; }
     @media (max-width: 991.98px) {
@@ -7527,7 +7527,7 @@ h1, h2, h3, h4, h5,
     font-size: 20px;
     line-height: 1.5;
     font-weight: 300;
-    color: rgba(255, 255, 255, 0.8); }
+    color: black; }
     .slider-text p a {
       color: #fff;
       border-bottom: 2px solid rgba(255, 255, 255, 0.3); }
@@ -7540,16 +7540,16 @@ h1, h2, h3, h4, h5,
     margin-bottom: 20px;
     z-index: 99; }
     .slider-text .breadcrumbs span {
-      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-      color: rgba(255, 255, 255, 0.7); }
+      border-bottom: 2px solid black;
+      color: black; }
       .slider-text .breadcrumbs span a {
-        color: #fff; }
+        color: black; }
   .slider-text .bread {
     font-weight: 400 !important; }
   .slider-text .btn-outline-white {
-    border: 1px solid rgba(255, 255, 255, 0.4) !important; }
+    border: 1px solid black !important; }
     .slider-text .btn-outline-white span {
-      color: #fff; }
+      color: black; }
     .slider-text .btn-outline-white:hover span {
       color: var(--tertiary); }
 
