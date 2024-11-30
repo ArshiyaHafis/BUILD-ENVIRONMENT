@@ -90,26 +90,36 @@
         <div class="row block-9">
           <div class="col-md-6 pr-md-5">
           	<h4 class="mb-4">Do you have any questions?</h4>
-              <form action="" method="post">
-                <div class="form-group">
-                  <input type="text" class="form-control" name="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject">
-                </div>
-                <div class="form-group">
-                  <textarea name="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-                </div>
-                <div class="form-group">
-                  <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-                </div>
-              </form>
+            <form id="contactForm">
+              <div class="form-group">
+                <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+              </div>
+              <div class="form-group">
+                <textarea name="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+              </div>
+            </form>
+            
+            <!-- Success Message Popup -->
+            <div id="successPopup" style="display: none; position: fixed; top: 20%; left: 50%; transform: translate(-50%, -50%); background: #28a745; color: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); z-index: 1000;">
+              Thanks! The form was submitted successfully.
+            </div>
+            
+            
           </div>
 
-          <div class="col-md-6" id="map"><gmp-map center="37.4220656,-122.0840897" zoom="10" map-id="DEMO_MAP_ID" style="height: 400px"></gmp-map></div>
+          <div class="col-md-6" id="map">
+            <div class="map-image-container">
+              <img src="images/location.webp" alt="Dubai Map" class="map-image">
+              <div class="map-overlay"></div>
+            </div>
+          </div>
+          
         </div>
       </div>
     </section>
@@ -129,34 +139,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Journey</h2>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Started Our Venture</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                  </div>
-                </div>
-              </div>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Release Website</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2">
+          <div class="col-md-2"> 
              <div class="ftco-footer-widget mb-4 ml-md-4">
               <h2 class="ftco-heading-2">Site Links</h2>
               <ul class="list-unstyled">
@@ -171,7 +154,7 @@
           </div>
           <div class="col-md-3">
             <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<h2 class="ftco-heading-2">Have Questions?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
 	               <!-- <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li> -->
@@ -214,6 +197,47 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGKgQo2m0vyPnm32qDHrcQo8YQMK_oyik&libraries=maps,marker&v=beta" defer></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent the default form submission behavior
+  
+      const formData = new FormData(this); // Get form data
+      const formAction = "https://formspree.io/f/mvgovbwk"; // Replace with your Formspree form ID URL
+  
+      fetch(formAction, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+        .then((response) => {
+          if (response.ok) {
+            // Show success popup
+            const popup = document.getElementById("successPopup");
+            popup.style.display = "block";
+  
+            // Hide popup after 3 seconds
+            setTimeout(() => {
+              popup.style.display = "none";
+            }, 3000);
+  
+            // Reset the form
+            document.getElementById("contactForm").reset();
+          } else {
+            alert("There was an issue submitting the form. Please try again.");
+          }
+        })
+        .catch((error) => {
+          console.error("Error submitting form:", error);
+          alert("There was an error submitting the form. Please try again.");
+        });
+    });
+  </script>
+  
     
   </body>
 </html>
+
+
+
