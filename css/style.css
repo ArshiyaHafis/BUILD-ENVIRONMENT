@@ -7494,23 +7494,37 @@ h1, h2, h3, h4, h5,
   .navbar-brand i {
     color: var(--tertiary);
     font-size: 30px; }
-
+    
 .hero-wrap {
   width: 100%;
   height: calc(100vh - 117px);
   min-height: 700px;
-  position: relative; }
-  .hero-wrap.hero-wrap-2 {
-    height: 600px; }
-  .hero-wrap .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    content: '';
-    opacity: 0;
-    background: #000; }
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-wrap.hero-wrap-2 {
+  height: 600px;
+}
+
+.hero-wrap .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: '';
+  background: rgba(0, 0, 0, 0.4); /* Translucent black background */
+  z-index: 1; /* Ensures it overlays the image */
+}
+
+.hero-wrap .container {
+  position: relative;
+  z-index: 2; /* Ensures text stays above the translucent overlay */
+}
+    
+    
 
 .slider-text {
   color: #fff;
