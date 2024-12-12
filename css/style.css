@@ -3574,7 +3574,7 @@ input[type="button"].btn-block {
 .navbar-dark .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.5); }
   .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
-    color: rgba(255, 255, 255, 0.75); }
+    color: white; }
   .navbar-dark .navbar-nav .nav-link.disabled {
     color: rgba(255, 255, 255, 0.25); }
 
@@ -7346,7 +7346,7 @@ h1, h2, h3, h4, h5,
     font-weight: 400;
     opacity: 1 !important; }
     .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
-      color: #fff; 
+      color: var(--tertiary); 
       font-weight: 200px;}
   .ftco-navbar-light .navbar-nav > .nav-item .dropdown-menu {
     border: none;
@@ -9222,5 +9222,28 @@ textarea.form-control {
       background-color: var(--tertiary);
       opacity: 0.5; /* Adjust opacity as needed */ /* Blue tint with 40% opacity */
       pointer-events: none; /* Allows interaction with the image if needed */
+    }
+
+    .btn-service {
+      background-color: var(--primary);
+      color: var(--white);
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+      font-family: 'Dosis', Arial, sans-serif;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    
+    .btn-service:hover {
+      background-color: var(--secondary);
+      transform: scale(1.05);
+      color: var(--dark);
+    }
+    
+    .btn-service:focus {
+      outline: none;
     }
     
